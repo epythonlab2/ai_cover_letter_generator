@@ -2,4 +2,4 @@
 .env
 .venv/
 *.pdf
-*_temp.html
+*_tmp.html
