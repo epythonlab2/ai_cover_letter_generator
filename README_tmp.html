@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>README.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/noh/Desktop/AI%20Projects/ai_cover_letter_generator/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///home/noh/Desktop/AI%20Projects/ai_cover_letter_generator/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="%F0%9F%93%9D-ai-powered-cover-letter-generator">📝 AI-Powered Cover Letter Generator</h1>
+<p>Welcome to the <strong>AI-Powered Cover Letter Generator</strong>, a beginner-friendly web app that helps you create professional cover letters based on job title, description, your experience, and your skills — all powered by OpenAI.</p>
+<p>This project is perfect for beginners learning <strong>Python</strong>, <strong>Flask</strong>, and <strong>Tailwind CSS</strong> while also exploring AI automation.</p>
+<hr>
+<h2 id="%E2%9C%A8-features">✨ Features</h2>
+<ul>
+<li>✅ Clean and responsive UI using <strong>Tailwind CSS</strong></li>
+<li>🤖 Generates customized cover letters using <strong>OpenAI API</strong></li>
+<li>📥 Download your cover letter as a <strong>PDF</strong></li>
+<li>🧩 Easy to understand project structure with beginner-level code explanations</li>
+<li>🔐 Uses <code>.env</code> to keep your API keys secure</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%9B%A0-tech-stack">🛠 Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td>HTML, Tailwind CSS</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>Flask (Python)</td>
+</tr>
+<tr>
+<td>AI API</td>
+<td>OpenAI API</td>
+</tr>
+<tr>
+<td>PDF Export</td>
+<td>pdfkit + wkhtmltopdf</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="%F0%9F%93%81-project-structure">📁 Project Structure</h2>
+<pre class="hljs"><code><div>cover-letter-generator/
+│
+├── templates/
+│   └── index.html            # Frontend with Tailwind CSS
+│
+├── static/
+│   └── styles.css (optional)  # Add custom styles here
+│   └── scripts.js (optional)  # Add custom javascripts here
+
+│
+├── app.py                    # Main Flask application
+├── .env                      # API Key (not pushed to Git)
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project documentation
+</div></code></pre>
+<blockquote>
+<p>💡 Need help creating a virtual environment and setting up the project structure? Check the tutorial of <a href="https://youtu.be/qYYYgS-ou7Q">Python Virtual Environments + GitHub Actions CI/CD</a>)!</p>
+</blockquote>
+<hr>
+<h2 id="%F0%9F%94%90-prerequisites">🔐 Prerequisites</h2>
+<p>Before running this project, make sure you:</p>
+<ol>
+<li>Have <strong>Python 3.7+</strong> installed.</li>
+<li>Installed <strong>wkhtmltopdf</strong> on your machine:
+<ul>
+<li><a href="https://wkhtmltopdf.org/downloads.html">https://wkhtmltopdf.org/downloads.html</a></li>
+</ul>
+</li>
+<li>Have a valid <strong>OpenAI API key</strong>:
+<ul>
+<li>Sign up at <a href="https://platform.openai.com">https://platform.openai.com</a></li>
+<li>Copy your secret key and save it in a <code>.env</code> file:<pre class="hljs"><code><div>OPENAI_API_KEY=your-api-key-here
+</div></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="%E2%9A%99%EF%B8%8F-installation">⚙️ Installation</h2>
+<p>Follow these steps to set up the project locally:</p>
+<h3 id="1-clone-the-repository">1. Clone the Repository</h3>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> https://github.com/epythonlab2/ai_cover_letter_generator.git
+<span class="hljs-built_in">cd</span> ai_cover_letter_generator
+</div></code></pre>
+<h3 id="2-optional-create-a-virtual-environment">2. (Optional) Create a Virtual Environment</h3>
+<pre class="hljs"><code><div>python -m venv .venv
+<span class="hljs-built_in">source</span> .venv/bin/activate       <span class="hljs-comment"># On Windows use: .venv\Scripts\activate</span>
+</div></code></pre>
+<h3 id="3-install-dependencies">3. Install Dependencies</h3>
+<pre class="hljs"><code><div>pip install -r requirements.txt
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%9A%80-running-the-app">🚀 Running the App</h2>
+<pre class="hljs"><code><div>python app.py
+</div></code></pre>
+<p>Visit <a href="http://localhost:5000">http://localhost:5000</a> in your browser.</p>
+<hr>
+<h2 id="%F0%9F%93%A6-requirements">📦 Requirements</h2>
+<pre class="hljs"><code><div>Flask
+python-dotenv
+openai
+xhtml2pdf
+</div></code></pre>
+<p>Make sure you’ve also installed <code>xhtml2pdf</code> on your system.</p>
+<hr>
+<h2 id="%F0%9F%96%BC%EF%B8%8F-ui-preview">🖼️ UI Preview</h2>
+<table>
+<thead>
+<tr>
+<th>Input Form</th>
+<th>Cover Letter Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="file:///home/noh/Desktop/AI Projects/ai_cover_letter_generator/screenshots/form.png" alt="Form Screenshot"></td>
+<td><img src="file:///home/noh/Desktop/AI Projects/ai_cover_letter_generator/screenshots/output.png" alt="Output Screenshot"></td>
+</tr>
+</tbody>
+</table>
+<p><em>(Add your own screenshots to the <code>screenshots/</code> folder)</em></p>
+<hr>
+<h2 id="%F0%9F%93%A5-pdf-download">📥 PDF Download</h2>
+<p>Once the cover letter is generated, click <strong>“Download PDF”</strong> to get a formatted version of your letter, ready to use.</p>
+<hr>
+<h2 id="%F0%9F%92%A1-future-improvements">💡 Future Improvements</h2>
+<ul>
+<li>Add user authentication</li>
+<li>Save generated letters in history</li>
+<li>Export to other formats (e.g. DOCX)</li>
+<li>Support for multiple languages</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%A4%9D-contributing">🤝 Contributing</h2>
+<p>Pull requests and suggestions are welcome!<br>
+If you’d like to contribute, fork the repo and submit a PR. 😊</p>
+<hr>
+<h2 id="%F0%9F%93%9C-license">📜 License</h2>
+<p>This project is licensed under the <strong>MIT License</strong>.</p>
+<hr>
+<h2 id="%F0%9F%8E%93-tutorial">🎓 Tutorial</h2>
+<p>📽️ Watch the full beginner-friendly tutorial on YouTube:<br>
+👉 <a href="#">https://youtu.be/77rzEvaEV04</a></p>
+<hr>
+<h2 id="%F0%9F%A7%A0-made-with">🧠 Made With</h2>
+<p>Made with 💙 for learners and job seekers who want to supercharge their applications with AI.</p>
+
+</body>
+
+</html>

@@ -46,7 +46,7 @@ cover-letter-generator/
 └── README.md                 # Project documentation
 ```
 
-> 💡 Need help creating a virtual environment and setting up the project structure? Check the tutorial link in the description of the video!
+> 💡 Need help creating a virtual environment and setting up the project structure? Check the tutorial of [Python Virtual Environments + GitHub Actions CI/CD](https://youtu.be/qYYYgS-ou7Q))!
 
 ---
 
@@ -73,8 +73,8 @@ Follow these steps to set up the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/epythonlab2/cover_letter_generator.git
-cd cover_letter_generator
+git clone https://github.com/epythonlab2/ai_cover_letter_generator.git
+cd ai_cover_letter_generator
 ```
 
 ### 2. (Optional) Create a Virtual Environment
@@ -108,10 +108,10 @@ Visit [http://localhost:5000](http://localhost:5000) in your browser.
 Flask
 python-dotenv
 openai
-pdfkit
+xhtml2pdf
 ```
 
-Make sure you’ve also installed `wkhtmltopdf` on your system.
+Make sure you’ve also installed `xhtml2pdf` on your system.
 
 ---
 
@@ -156,7 +156,7 @@ This project is licensed under the **MIT License**.
 ## 🎓 Tutorial
 
 📽️ Watch the full beginner-friendly tutorial on YouTube:  
-👉 [YouTube Video Link](#)
+👉 [https://youtu.be/77rzEvaEV04](#)
 
 ---
 
