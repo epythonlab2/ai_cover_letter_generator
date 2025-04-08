@@ -1,0 +1,4 @@
+# Exclude files not to be shared accross github
+.env
+.venv/
+*.pdf

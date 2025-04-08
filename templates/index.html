@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cover Letter Generator</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- Main Background Container with Gradient -->
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-r 
+                from-blue-400 via-purple-500 to-pink-500">
+
+        <!-- Card Container -->
+        <div class="w-full max-w-lg p-8 bg-white rounded-lg shadow-xl">
+
+            <!-- Title -->
+            <h1 class="text-4xl font-semibold text-center text-blue-600 mb-6">
+                Cover Letter Generator
+            </h1>
+
+            <!-- Subtitle / Instructions -->
+            <p class="text-lg text-gray-700 text-center mb-6">
+                Create a professional cover letter based on your job details. <br/>
+                Simply fill in the form, and we'll generate it for you!
+            </p>
+
+            <!-- Form Starts -->
+            <form method="POST" class="space-y-6">
+
+                <!-- Job Title Field -->
+                <div class="flex flex-col">
+                    <label for="job_title" class="text-gray-800 font-medium">Job Title:</label>
+                    <input 
+                        type="text" 
+                        name="job_title" 
+                        class="px-4 py-2 border border-gray-300 rounded-md shadow-sm 
+                               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Enter the job title" 
+                        required
+                    />
+                </div>
+
+                <!-- Job Description Field -->
+                <div class="flex flex-col">
+                    <label for="job_description" class="text-gray-800 font-medium">Job Description:</label>
+                    <textarea 
+                        name="job_description" 
+                        class="px-4 py-2 border border-gray-300 rounded-md shadow-sm 
+                               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Provide the job description" 
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Experience Field -->
+                <div class="flex flex-col">
+                    <label for="experience" class="text-gray-800 font-medium">Years of Experience:</label>
+                    <input 
+                        type="number" 
+                        name="experience" 
+                        class="px-4 py-2 border border-gray-300 rounded-md shadow-sm 
+                               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Enter your years of experience" 
+                        required
+                    />
+                </div>
+
+                <!-- Skills Field -->
+                <div class="flex flex-col">
+                    <label for="skills" class="text-gray-800 font-medium">Skills:</label>
+                    <input 
+                        type="text" 
+                        name="skills" 
+                        class="px-4 py-2 border border-gray-300 rounded-md shadow-sm 
+                               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="List your relevant skills" 
+                        required
+                    />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button 
+                        type="submit" 
+                        class="px-6 py-3 w-full bg-blue-600 text-white font-semibold rounded-md 
+                               hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        Generate Cover Letter
+                    </button>
+                </div>
+            </form>
+            <!-- Form Ends -->
+
+            <!-- Generated Cover Letter Display -->
+            {% if cover_letter %}
+            <div class="mt-8 p-6 bg-gray-50 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                    Your Generated Cover Letter:
+                </h2>
+                <p class="text-lg text-gray-700 whitespace-pre-line">
+                    {{ cover_letter }}
+                </p>
+
+                <!-- Download Button -->
+                <div class="mt-6 text-center">
+                    <a 
+                        href="{{ url_for('download_pdf') }}" 
+                        class="px-6 py-3 bg-green-600 text-white font-semibold rounded-md 
+                               hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    >
+                        Download as PDF
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+        <!-- Card Container Ends -->
+
+    </div>
+    <!-- Main Container Ends -->
+
+</body>
+</html>
